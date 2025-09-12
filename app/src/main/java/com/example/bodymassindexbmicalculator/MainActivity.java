@@ -67,21 +67,21 @@ public class MainActivity extends AppCompatActivity {
                 else
                     BMI_Cat = "Obese Class 3 – Very Severely Obese";
 
-//                // Additional guidance for weight change
-//                String extraInfo = "";
-//                if (BMI < 18.5) {
-//                    // Minimum normal BMI boundary
-//                    double minNormalWeight = 18.5 * (height * height);
-//                    double weightToGain = minNormalWeight - weight;
-//                    extraInfo = String.format("\nYou need to gain %.1f kg to reach a normal BMI.", weightToGain);
-//                } else if (BMI >= 25) {
-//                    // Maximum normal BMI boundary
-//                    double maxNormalWeight = 24.9 * (height * height);
-//                    double weightToLose = weight - maxNormalWeight;
-//                    extraInfo = String.format("\nYou need to lose %.1f kg to reach a normal BMI.", weightToLose);
-//                }
-//
-                BMICategory.setText(BMI_Cat);
+                // Guidance for weight change
+                String extraInfo = "";
+                if (BMI < 18.5) {
+                    // Minimum normal BMI boundary
+                    double minNormalWeight = 18.5 * (height * height);
+                    double weightToGain = minNormalWeight - weight;
+                    extraInfo = String.format("\nYou need to gain %.1f kg to reach a normal BMI.", weightToGain);
+                } else if (BMI >= 25) {
+                    // Maximum normal BMI boundary
+                    double maxNormalWeight = 24.9 * (height * height);
+                    double weightToLose = weight - maxNormalWeight;
+                    extraInfo = String.format("\nYou need to lose %.1f kg to reach a normal BMI.", weightToLose);
+                }
+
+                BMICategory.setText(BMI_Cat + extraInfo);
             }
         });
     }
